@@ -1,0 +1,19 @@
+#!/usr/bin/bash
+
+for i in "$@"
+do
+    case $i in
+        -i)
+            cat - > /dev/clipboard
+            exit 0
+            ;;
+        -o)
+            cat /dev/clipboard
+            exit 0
+            ;;
+        *)
+            # unknown option
+            shift
+            ;;
+    esac
+done
